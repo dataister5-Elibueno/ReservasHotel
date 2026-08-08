@@ -1,106 +1,36 @@
-ReservasHotel
-Descripción del proyecto
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-ReservasHotel es una aplicación web para la gestión de reservas de hotel.
-El sistema contempla dos roles principales: cliente y administrador.
+## Getting Started
 
-    Los clientes pueden registrarse, iniciar sesión, explorar hoteles y reservar habitaciones.
+First, run the development server:
 
-    Los administradores gestionan disponibilidad, precios y control de reservas.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-El proyecto está desarrollado con Next.js, Tailwind CSS y TypeScript, utilizando Supabase como backend y desplegado en Vercel.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Roles del sistema
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-    Cliente
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-        Registro e inicio de sesión.
+## Learn More
 
-        Exploración de hoteles y habitaciones disponibles.
+To learn more about Next.js, take a look at the following resources:
 
-        Creación y cancelación de reservas.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-    Administrador
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-        Gestión de disponibilidad y precios.
+## Deploy on Vercel
 
-        CRUD completo de hoteles, habitaciones y reservas.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-        Control de usuarios y métricas.
-
-Base de datos en Supabase
-
-La base de datos se implementa en Supabase (PostgreSQL) con las siguientes tablas:
-
-    usuarios: clientes y administradores.
-
-    hoteles: información de cada hotel.
-
-    habitaciones: tipos, precios y estado.
-
-    reservas: relación entre clientes y habitaciones.
-
-Relaciones uno-a-muchos
-
-    Un hotel → muchas habitaciones.
-
-    Un cliente → muchas reservas.
-
-    Una reserva → una habitación.
-
-Autenticación
-
-    Implementada con Supabase Auth.
-
-    Registro e inicio de sesión seguro.
-
-    Control de roles mediante políticas de seguridad (RLS).
-
-Funcionalidades CRUD
-
-    Clientes: crear reservas, leer disponibilidad, cancelar reservas.
-
-    Administradores: crear/editar hoteles y habitaciones, actualizar precios, eliminar registros.
-
-API externa
-
-    Integración con OpenWeatherMap.???
-
-    Muestra el clima del destino del hotel en tiempo real.
-
-Frontend
-
-    Framework: Next.js.
-
-    Estilos: Tailwind CSS.
-
-    Lenguaje: TypeScript.
-
-    Componentes principales:
-
-        Login y registro.
-
-        Listado de hoteles y habitaciones.
-
-        Reservas de clientes.
-
-        Panel administrativo.
-
-Despliegue
-
-    El proyecto se despliega en Vercel.
-
-    Documentación incluida en este README y en el repositorio.
-
-Resumen
-
-Este proyecto integra:
-
-    Supabase como backend (autenticación, base de datos, RLS).
-
-    Next.js + Tailwind + TypeScript como frontend.
-
-    OpenWeatherMap API para información climática.
-
-    Vercel para despliegue en producción.# ReservasHotel
- 
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,5 +1,6 @@
-"use client"
-import { supabase } from "@/lib/supabase"
+//"use client"
+//import { useEffect, useState } from "react"
+import { supabase } from "@/lib/supabaseCliente"
 
 export default async function DashboardPage() {
   // Usuario logueado
@@ -27,14 +28,16 @@ export default async function DashboardPage() {
   // Hoteles disponibles
   const { data: hoteles } = await supabase
     .from("hoteles")
-    .select("id, nombre, ciudad, descripcion")
+    .select("id, nombre, ciudad, descripcion, imagen_url")
 
   return (
     <section className="max-w-5xl mx-auto px-6 py-12">
       {/* Encabezado */}
       <div className="mb-10 text-center">
         <h1 className="text-4xl font-extrabold text-white mb-2">
-          RESERVAS HOTEL EC
+          <span className="text-yellow-400">Reserv</span>
+          <span className="text-blue-500">EC</span>
+          <span className="text-red-500">_HOTEL</span>
         </h1>
         {user && <p className="text-slate-400">Bienvenida {user.email}</p>}
       </div>
@@ -43,15 +46,15 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div className="bg-slate-800 rounded-xl p-6 text-center">
           <p className="text-slate-400 text-sm mb-1">Reservas</p>
-          <p className="text-3xl font-bold text-white">{reservasCount}</p>
+          <p className="text-3xl font-bold text-yellow-400">{reservasCount}</p>
         </div>
         <div className="bg-slate-800 rounded-xl p-6 text-center">
           <p className="text-slate-400 text-sm mb-1">Hoteles</p>
-          <p className="text-3xl font-bold text-white">{hotelesCount}</p>
+          <p className="text-3xl font-bold text-blue-500">{hotelesCount}</p>
         </div>
         <div className="bg-slate-800 rounded-xl p-6 text-center">
           <p className="text-slate-400 text-sm mb-1">Usuarios</p>
-          <p className="text-3xl font-bold text-white">{usuariosCount}</p>
+          <p className="text-3xl font-bold text-red-500">{usuariosCount}</p>
         </div>
       </div>
 
@@ -74,13 +77,13 @@ export default async function DashboardPage() {
       )}
 
       {/* Hoteles disponibles */}
-      <h2 className="text-xl font-bold text-white mb-4">Hoteles disponibles</h2>
+      <h2 className="text-xl font-bold text-green-500 mb-4">Hoteles disponibles</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {hoteles?.map((hotel) => (
           <div key={hotel.id} className="bg-slate-800 rounded-xl p-6">
-            <h3 className="text-lg font-bold text-white mb-2">{hotel.nombre}</h3>
+            <h3 className="text-lg font-bold text-green-500 mb-2">{hotel.nombre}</h3>
             <p className="text-slate-400">{hotel.ciudad}</p>
-            <p className="text-slate-300 text-sm">{hotel.descripcion}</p>
+            <p className="text-slate-300 text-green-500">{hotel.descripcion}</p>
           </div>
         ))}
       </div>

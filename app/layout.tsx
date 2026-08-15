@@ -6,8 +6,8 @@ import Navbar from "@/components/Navbar";
 
 
 export const metadata: Metadata = {
-  title: "DevPort - Portal de hoteles del Ecuador RESERV_HOTEL_EC",
-  description: "Encuentra Hoteles disponibles dentro de RESER_HOTEL_EC",
+  title: "ReservEC_HOTEL - Portal de hoteles asociados del Ecuador",
+  description: "Encuentra Hoteles disponibles en ReservEC_HOTEL",
 };
 
 export default function RootLayout({
@@ -19,9 +19,9 @@ export default function RootLayout({
     <html
       lang="es"
     >
-      <body className="bg-slate-950 text-white min-h-screen">
+       <body className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white min-h-screen">
         <Navbar />
-        <main>{children} </main>
+        <main className="px-6 py-10">{children}</main>
       </body>
     </html>
   );

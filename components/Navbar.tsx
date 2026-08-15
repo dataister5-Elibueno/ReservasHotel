@@ -6,7 +6,7 @@ export default function Navbar() {
         <nav className="bg-slate-900 border-b border-slate-700 px-6 py-4 flex justify-between items-center">
 
             <Link href="/" className="text-xl font-bold text-white hover: text-blue-400 transition-colors">
-                RESERV_HOTEL_EC
+                ReservEC_HOTEL
             </Link>
 
             <div className="flex items-center gap-6">

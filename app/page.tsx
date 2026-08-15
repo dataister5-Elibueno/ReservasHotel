@@ -4,11 +4,11 @@ export default function Home() {
       {/* Título principal */}
       <h1 className="text-5xl font-bold text-white">
         Bienvenido a <span
-          className="text-blue-400">DevPort</span>
+          className="text-blue-400">ReservEC_HOTEL</span>
       </h1>
       {/* Subtítulo */}
       <p className="text-lg text-slate-400 max-w-md text-center">
-        Portal de hoteles del Ecuador RESERV_HOTEL_EC
+        Portal de hoteles asociados del Ecuador ReservEC_HOTEL
         disponibilidad de reservas en linea para turistas nacionales e internacionales.
       </p>
       {/* Botón placeholder */}

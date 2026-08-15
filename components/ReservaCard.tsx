@@ -12,7 +12,7 @@ export default function ReservaCard({
   id,
   fecha_inicio,
   fecha_fin,
-  estado,
+  estado= ["pendiente", "confirmada", "cancelada"],
   usuario_id,
   habitacion_id,
 }: ReservaCardProps) {

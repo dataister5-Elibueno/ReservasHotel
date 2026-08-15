@@ -8,8 +8,8 @@ export default function Home() {
       </h1>
       {/* Subtítulo */}
       <p className="text-lg text-slate-400 max-w-md text-center">
-        Portal de hoteles asociados del Ecuador ReservEC_HOTEL
-        disponibilidad de reservas en linea para turistas nacionales e internacionales.
+        Portal de reservas para hoteles asociados en ReservEC_HOTEL
+        disponibilidad de reservas en línea para turistas nacionales e internacionales.
       </p>
       {/* Botón placeholder */}
       <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors">

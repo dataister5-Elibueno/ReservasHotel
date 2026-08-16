@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 interface ReservaCardProps {
-  id: number;
+  id: string;
   fecha_inicio: string;
   fecha_fin: string;
-  estado: string;
+  estado: "pendiente" | "confirmada" | "cancelada";
   usuario_id: string;
   habitacion_id: number;
 }
@@ -12,7 +14,7 @@ export default function ReservaCard({
   id,
   fecha_inicio,
   fecha_fin,
-  estado= ["pendiente", "confirmada", "cancelada"],
+  estado= "pendiente",
   usuario_id,
   habitacion_id,
 }: ReservaCardProps) {
@@ -46,9 +48,12 @@ export default function ReservaCard({
       </div>
 
       {/* Botón de acción */}
-      <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition-colors text-sm">
-        Ver detalles &rarr;
-      </button>
+      <Link
+           href={`/posts/${id}`}
+           className="block text-center w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition-colors text-sm"
+>
+    Ver detalles &rarr;
+</Link>
     </article>
   );
 }

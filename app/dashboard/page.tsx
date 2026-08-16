@@ -1,5 +1,4 @@
 //"use client"
-//import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabaseCliente"
 
 export default async function DashboardPage() {
@@ -9,11 +8,11 @@ export default async function DashboardPage() {
   // Conteos globales
   const { count: reservasCount } = await supabase
     .from("reservas")
-    .select("*", { count: "exact", head: true })
+    .select("id, fecha_inicio, fecha_fin, estado, habitacion_id", { count: "exact", head: true })
 
   const { count: hotelesCount } = await supabase
     .from("hoteles")
-    .select("*", { count: "exact", head: true })
+    .select("id, nombre, ciudad, descripcion, imagen_url", { count: "exact", head: true })
 
   const { count: usuariosCount } = await supabase
     .from("usuarios")

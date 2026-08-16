@@ -12,29 +12,57 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [fullName, setFullName] = useState('')
-  const [role, setRole] = useState('cliente')
+  const [rol, setRole] = useState('cliente')
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
-    const { error } = await supabase.auth.signUp({
-      email, password,
-      options: { data: { full_name: fullName, role } }
+
+    // Crear cuenta en Supabase Auth
+    const { error: signUpError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { full_name: fullName, rol } },
     })
-    if (error) {
-      setError(error.message)
+
+    if (signUpError) {
+      setError(signUpError.message)
       return
     }
-    router.push('/login')
+
+    // Guardar datos del usuario en la tabla personalizada "usuarios"
+    const { error: insertError } = await supabase.from("usuarios").insert({
+      email,
+      nombre: fullName,
+      rol,
+    })
+
+    if (insertError) {
+      console.error("Error al insertar usuario:", insertError.message)
+    }
+
+    // Iniciar sesión automáticamente
+    const { error: signInError } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+
+    if (signInError) {
+      setError(signInError.message)
+      return
+    }
+
+    // Redirigir al dashboard
+    router.push("/dashboard")
   }
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-slate-800 rounded-2xl p-8 shadow-xl">
         <h1 className="text-2xl font-bold text-white mb-2">
-          Crear cuenta en ReservEC_HOTEL
+          Crear cuenta ReservEC_HOTEL
         </h1>
         <p className="text-slate-400 mb-8">
           Regístrate para reservar hoteles en Ecuador
@@ -48,24 +76,27 @@ export default function RegisterPage() {
           <input
             type="text"
             placeholder="Nombre completo"
-            value={fullName} onChange={e => setFullName(e.target.value)}
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
             className="bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:border-blue-500"
           />
           <input
             type="email"
             placeholder="correo@ejemplo.com"
-            value={email} onChange={e => setEmail(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:border-blue-500"
           />
           <input
             type="password"
             placeholder="Contraseña"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             className="bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:border-blue-500"
           />
           <select
-            value={role} onChange={e => setRole(e.target.value)}
+            value={rol}
+            onChange={(e) => setRole(e.target.value)}
             className="bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:border-blue-500"
           >
             <option value="cliente">Cliente</option>

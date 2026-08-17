@@ -31,15 +31,16 @@ export default function LoginPage() {
   return (
     <section className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-slate-800 rounded-2xl p-8 shadow-xl">
+        {/* Título */}
         <h1 className="text-2xl font-bold text-white mb-2">
-          Crear cuenta     
+          Iniciar sesión
         </h1>
         <p className="text-slate-400 mb-8">
-          Registrarme en <span className="text-yellow-400">Reserv</span>
+          Acceder a <span className="text-yellow-400">Reserv</span>
           <span className="text-blue-500">EC</span>
           <span className="text-red-500">_HOTEL</span>
         </p>
-
+        
         {error && (
           <p className="bg-red-500/10 border border-red-500/50 text-red-400 text-sm rounded-lg px-4 py-3 mb-4">
             {error}
@@ -72,7 +73,7 @@ export default function LoginPage() {
         <p className="text-slate-400 text-center mt-6">
           ¿No tienes cuenta?{" "}
           <Link href="/register" className="text-blue-400 hover:text-blue-300 font-semibold">
-            Regístrarme
+            Regístrate
           </Link>
         </p>
       </div>

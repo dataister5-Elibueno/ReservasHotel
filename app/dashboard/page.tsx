@@ -41,19 +41,22 @@ export default async function DashboardPage() {
         {user && <p className="text-slate-400">Bienvenida {user.email}</p>}
       </div>
 
-      {/* Cards globales */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div className="bg-slate-800 rounded-xl p-6 text-center">
+      {/* Cards globales placeholder */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Card #1 de conteo de reservas */}
+        <div className="bg-slate-800 rounded-xl p-6">
           <p className="text-slate-400 text-sm mb-1">Reservas</p>
-          <p className="text-3xl font-bold text-yellow-400">{reservasCount}</p>
+          <p className="text-3xl font-bold text-yellow-400">0</p>
         </div>
+        {/* Card #2 de conteo de hoteles */}
         <div className="bg-slate-800 rounded-xl p-6 text-center">
           <p className="text-slate-400 text-sm mb-1">Hoteles</p>
-          <p className="text-3xl font-bold text-blue-500">{hotelesCount}</p>
+          <p className="text-3xl font-bold text-blue-500">0</p>
         </div>
+        {/* Card #3 de conteo de usuarios */}
         <div className="bg-slate-800 rounded-xl p-6 text-center">
           <p className="text-slate-400 text-sm mb-1">Usuarios</p>
-          <p className="text-3xl font-bold text-red-500">{usuariosCount}</p>
+          <p className="text-3xl font-bold text-red-500">0</p>
         </div>
       </div>
 

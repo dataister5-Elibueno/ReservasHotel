@@ -10,19 +10,19 @@ export default function Navbar() {
             </Link>
 
             <div className="flex items-center gap-6">
-                <Link href="/" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/" className="text-yellow-400 hover:text-white transition-colors">
                     Inicio
                 </Link>
 
-                <Link href="/posts" className="text-slate-400 hover:text-white transition-colors">
-                    Publicaciones
+                <Link href="/posts" className="text-blue-400 hover:text-white transition-colors">
+                    Reservas publicadas
                 </Link>
 
-                <Link href="/dashboard" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/dashboard" className="text-green-400 hover:text-white transition-colors">
                     Dashboard
                 </Link>
 
-                <Link href="/login" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors">
+                <Link href="/login" className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors">
                     Login
                 </Link>
             </div>

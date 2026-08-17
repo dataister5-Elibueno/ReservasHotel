@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 
-//import "./globals.css";
+import "./globals.css";
 
 import Navbar from "@/components/Navbar";
-
 
 export const metadata: Metadata = {
   title: "ReservEC_HOTEL - Portal de hoteles asociados",
@@ -18,7 +17,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-    >
+    >       
        <body className="bg-gradient-to-br from-slate-950 via-slate-850 to-slate-800 text-white min-h-screen">
         <Navbar />
         <main className="px-6 py-10">{children}</main>

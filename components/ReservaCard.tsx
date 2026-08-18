@@ -10,7 +10,7 @@ interface ReservaCardProps {
 }
 
 // Componente que recibe las props tipadas
-export default function ReservaCard({
+export default function ReservaPage({
   id,
   fecha_inicio,
   fecha_fin,
@@ -49,7 +49,7 @@ export default function ReservaCard({
 
       {/* Botón de acción */}
       <Link
-           href={`/posts/${id}`}
+           href={`/reservas/${id}`}
            className="block text-center w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition-colors text-sm"
 >
     Ver detalles &rarr;

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-
+import Link from "next/link";
 import "./globals.css";
-
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
@@ -18,7 +17,7 @@ export default function RootLayout({
     <html
       lang="es"
     >       
-       <body className="bg-gradient-to-br from-slate-950 via-slate-850 to-slate-800 text-white min-h-screen">
+       <body className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white min-h-screen">
         <Navbar />
         <main className="px-6 py-10">{children}</main>
       </body>

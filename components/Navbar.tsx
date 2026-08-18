@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function Navbar() {
-
+{/*ESTE NAVBAr estatito de componente sin Props, ESTE COMPONENTE SE MANTENDRA ESTATICO*/}
     return (
         <nav className="bg-slate-900 border-b border-slate-700 px-6 py-4 flex justify-between items-center">
 
@@ -14,7 +14,7 @@ export default function Navbar() {
                     Inicio
                 </Link>
 
-                <Link href="/posts" className="text-blue-400 hover:text-white transition-colors">
+                <Link href="/reservas" className="text-blue-400 hover:text-white transition-colors">
                     Reservas publicadas
                 </Link>
 

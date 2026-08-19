@@ -1,4 +1,3 @@
-//"use client"
 import { supabase } from "@/lib/supabaseCliente"
 
 export default async function DashboardPage() {

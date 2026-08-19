@@ -45,6 +45,16 @@ export default function AdminDashboard({
                     <p className="text-slate-400 text-sm mb-1">Reservas totales</p>
                     <p className="text-3xl font-bold text-white">{totalReservas}</p>
                 </div>
+            <div className="bg-slate-800 rounded-xl p-6">
+
+                <Link
+                    href="/dashboard/mis-hoteles"
+                    className="bg-blue-400 hover:bg-blue-300
+                        text-white font-semibold
+                        px-5 py-3 rounded-lg transition-colors"
+                >
+                    Ver mis hoteles $rarr
+                </Link>
             </div>
         </main>
     )

@@ -1,8 +1,9 @@
 import { createClient } from "@/lib/supabase-server"
+import ConfirmSubmitButton from "@/components/ConfirmSubmintButton"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
-export default function NuevoHotelPage() {
+export default function MisHotelesPage() {
     // Server Action definida DENTRO del componente
     async function crearHotel(formData: FormData) {
         "use server" // convierte esta función en Server Action
